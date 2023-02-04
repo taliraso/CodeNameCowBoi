@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] InputAction movement;
     Rigidbody rb;
+    [SerializeField] float xOffset = 0.005f;
+    [SerializeField] float zOffset = 0.005f;
 
 
     // Start is called before the first frame update
@@ -28,8 +30,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log(zMovement);
 
-        float xOffset = 0.1f;
-        float zOffset = 0.1f;
+
         float forceSize = 0.1f;
         
 
