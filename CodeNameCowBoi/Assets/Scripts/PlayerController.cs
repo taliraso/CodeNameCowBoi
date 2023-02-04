@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     [SerializeField] float xOffset = 0.005f;
     [SerializeField] float zOffset = 0.005f;
-    bool isJumping = false;
+    public float forceSize = 200;
 
 
     // Start is called before the first frame update
@@ -26,10 +26,6 @@ public class PlayerController : MonoBehaviour
         float zMovement = movement.ReadValue<Vector3>().z;
         float jumpMovement = movement.ReadValue<Vector3>().y;
 
-        float forceSize = 0.1f;
-        
-        
-
         float newXPos = transform.localPosition.x + xOffset * xMovement;
         float newZPos = transform.localPosition.z + zOffset * zMovement;
 
@@ -39,12 +35,11 @@ public class PlayerController : MonoBehaviour
         //Restrict jump to only when in original position
 
 
-        if (isJumping == true &&  jumpMovement == 1f)
+        if (jumpMovement == 1f && transform.position.y < 1.05)
         {
-            isJumping = true;
-            rb.AddForce(Vector3.up, ForceMode.Force);
+            Debug.Log("weJumpin");
+            rb.AddForce(Vector3.up*forceSize, ForceMode.Force);
         }
-
 
     }
 

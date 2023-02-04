@@ -179,6 +179,7 @@ MonoBehaviour:
     m_Flags: 0
   xOffset: 0.005
   zOffset: 0.005
+  forceSize: 100
 --- !u!54 &2172185625989219042
 Rigidbody:
   m_ObjectHideFlags: 0
