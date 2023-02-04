@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 977115131484219533}
   - component: {fileID: 3056710774494223431}
   - component: {fileID: 93507495119325713}
+  - component: {fileID: 2293726446911334547}
   m_Layer: 0
   m_Name: Potato
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3561047893504294290}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,3 +99,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lanuchVelocity: 1
   projectileBoundry: 10
+--- !u!136 &2293726446911334547
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561047893504294290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.016750336
+  m_Height: 0.021078495
+  m_Direction: 1
+  m_Center: {x: 0.00049920427, y: -9.313224e-10, z: -0.0000006100162}

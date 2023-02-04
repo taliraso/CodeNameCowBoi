@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5648161633482034726}
   - component: {fileID: 7603969931599624940}
   - component: {fileID: -6708609410079338094}
+  - component: {fileID: -2877514005003454698}
   m_Layer: 0
   m_Name: Beetroot
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8252360527516310329}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,3 +99,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lanuchVelocity: 1
   projectileBoundry: 10
+--- !u!136 &-2877514005003454698
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252360527516310329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.014464314
+  m_Height: 0.019999992
+  m_Direction: 1
+  m_Center: {x: -0.00037788553, y: -0.0003332169, z: -0.001863876}
