@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float xOffset = 0.005f;
     [SerializeField] float zOffset = 0.005f;
     public float forceSize = 300;
+    public float dashSpeed = 2; 
 
 
     // Start is called before the first frame update
@@ -22,39 +23,33 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+        //Our current x and z 
         float currentXPos = transform.localPosition.x;
         float currentZPos = transform.localPosition.z;
+        float currentYPos = transform.localPosition.y;
 
+        //are we pressing button? 1 and -1 Yes, 0 No 
         float xMovement = movement.ReadValue<Vector3>().x;
         float zMovement = movement.ReadValue<Vector3>().z;
-        float jumpMovement = movement.ReadValue<Vector3>().y;
+        float dashMovement = movement.ReadValue<Vector3>().y;
 
-        if (transform.position.y > 1.5f)
-        {
-            Debug.Log("We off ground");
-            xMovement = 0;
-            zMovement = 0;
-
-        }
-
-        float newXPos = currentXPos + xOffset * xMovement;
-        float newZPos = currentZPos + zOffset * zMovement;
-
-        
+        //Moving the player
+        float newXPos = currentXPos + xOffset * xMovement * dashSpeed;
+        float newZPos = currentZPos + zOffset * zMovement * dashSpeed;
 
         transform.localPosition = new Vector3(newXPos, transform.localPosition.y, transform.localPosition.z);
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, newZPos);
 
-
-        if (jumpMovement == 1f && transform.position.y < 1.05)
+        if (dashMovement == 1)
         {
-            
-            Debug.Log("weJumpin");
-            rb.AddForce(Vector3.up*forceSize, ForceMode.Force);
-            
+            dashSpeed = 2;
         }
-
-
+        else
+        {
+            dashSpeed = 1;
+        }
 
     }
 
