@@ -10,16 +10,15 @@ public class EnemyBehaviour : MonoBehaviour
     
     private void Start()
     {
-
         player = GameObject.FindGameObjectWithTag(playerTag);
     }
+
     private void Update()
     {
         if(player != null) //can it find the player object?
         {
-           
             this.transform.LookAt(player.transform); //i'm mr meeseeks look at me!
-
+            
         }
     }
 }
