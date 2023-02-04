@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1173284425429992134}
   - component: {fileID: 6594073186924704526}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile_Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,3 +111,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71f92869f5a04de4a15face9bc8ad0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanuchVelocity: 1

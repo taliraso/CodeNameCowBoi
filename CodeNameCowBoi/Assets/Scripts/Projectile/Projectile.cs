@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    public float lanuchVelocity = 1f;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.Translate(Vector3.up * Time.deltaTime * lanuchVelocity);
     }
 }
