@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
-    //This script is to determine how many enemies we will have in the scene
-    public GameObject[] enemyObjArray;
-    public int numEnemies = 0;
+
+    public GameObject enemy; // single game object to be duplicated
+    public int numEnemies = 5; // number of objects in the array
+    public float radius = 10f; // radius of the perimeter
 
     private void Start()
     {
-        numEnemies = enemyObjArray.Length; // Count enemies in array entry
-        
-        for (int i=0; i < numEnemies; i++)
+        GameObject[] objectArray = new GameObject[numEnemies];
+        Vector3 center = transform.position; // center point
+
+        for (int i = 0; i < numEnemies; i++)
         {
-            //spawn at a place
+            // Calculate the position of each duplicated object along the perimeter
+            float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
+            Vector3 position = center + new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * radius;
+
+
+            // Instantiate a new game object and store it in the array
+            objectArray[i] = Instantiate(enemy, position, Quaternion.identity);
         }
-        
     }
+
 
 }

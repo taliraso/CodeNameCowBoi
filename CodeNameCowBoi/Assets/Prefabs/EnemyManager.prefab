@@ -44,9 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a16f1b7e6b941d791c8adb1d4b9b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyObjArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  numEnemies: 0
+  enemy: {fileID: 4004781127094337912, guid: bcf18f77df58b40f7af8a29345e2cc11, type: 3}
+  numEnemies: 4
+  radius: 10
