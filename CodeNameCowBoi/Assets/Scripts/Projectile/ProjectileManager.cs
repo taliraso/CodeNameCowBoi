@@ -12,9 +12,9 @@ public class ProjectileManager : MonoBehaviour
 
 
     //Randomise rate
-    [SerializeField]float randomIntervalMax = 1f; 
-    [SerializeField] float randomIntervalMin = -1f;
-    private float randomTime = 0;
+    [SerializeField]float randomIntervalMax = 10f; 
+    [SerializeField] float randomIntervalMin = 0f;
+    private float randomTime = 0.1f;
 
     //target player
     private GameObject player;
@@ -33,6 +33,7 @@ public class ProjectileManager : MonoBehaviour
 
         //Random interval
         randomTime = Random.Range(randomIntervalMin, randomIntervalMax);
+        
         InvokeRepeating("SpawnProjectile", randomTime, 1);
 
         //find player
