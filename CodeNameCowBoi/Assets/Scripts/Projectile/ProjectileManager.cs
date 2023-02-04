@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
 {
+    /// <summary>
+    /// Zach - Fix the null ref pooling issues plz
+    /// 
+    /// </summary>
     //Projectile pool 
     //public GameObject projectilePrefab;
     public GameObject[] projectileArray;
@@ -12,10 +16,11 @@ public class ProjectileManager : MonoBehaviour
     public int poolSize = 10;
     private GameObject[] projectiles;
     private int currentProjectile = 0;
+    private GameObject[][] projectilePools;
 
 
     //Randomise rate
-    [SerializeField]float randomIntervalMax = 10f; 
+    [SerializeField] float randomIntervalMax = 10f; 
     [SerializeField] float randomIntervalMin = 0f;
     private float randomTime = 0.1f;
 
@@ -27,6 +32,7 @@ public class ProjectileManager : MonoBehaviour
     void Start()
     {
         arrayIndex = projectileArray.Length;
+        projectilePools = new GameObject[projectileArray.Length][];
 
         projectiles = new GameObject[poolSize];
         for (int i = 0; i < poolSize; i++)
@@ -38,14 +44,18 @@ public class ProjectileManager : MonoBehaviour
 
         //Random interval
         randomTime = Random.Range(randomIntervalMin, randomIntervalMax);
-        
-        InvokeRepeating("SpawnProjectile", randomTime, 1);
 
+        InvokeRepeating("SpawnProjectile", randomTime, 1);
+        
         //find player
         player = GameObject.FindGameObjectWithTag(playerTag);
         target = player.transform;
     }
-   
+    private void Update()
+    {
+        
+    }
+
     public GameObject SpawnProjectile()
     {
         
@@ -58,10 +68,10 @@ public class ProjectileManager : MonoBehaviour
             Vector3 targetPosition = target.position;
             targetPosition.y = transform.position.y + projectileOffset;
             obj.transform.LookAt(targetPosition);
+            obj.SetActive(true);
         }
-
-        obj.SetActive(true);
         currentProjectile++;
+
         if (currentProjectile >= poolSize)
         {
             currentProjectile = 0;

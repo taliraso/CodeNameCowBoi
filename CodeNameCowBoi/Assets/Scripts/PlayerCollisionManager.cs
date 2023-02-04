@@ -7,6 +7,8 @@ public class PlayerCollisionManager : MonoBehaviour
 
     public int health = 3;
     public GameObject floor;
+
+    public GameObject[][] projectilePoolObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,10 @@ public class PlayerCollisionManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer != 6 )
+        if (collision.gameObject.tag == "Projectile") 
         {
-            Destroy(collision.gameObject);
+            
+            collision.gameObject.SetActive(false);
             health -= 1;
         }
            

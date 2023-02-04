@@ -1602,7 +1602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8647973111376079627}
   - component: {fileID: 9133373034456490416}
-  - component: {fileID: 6165751831141645780}
+  - component: {fileID: -4198311483710347400}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f661c013d1349ac9528091622007a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6165751831141645780
+--- !u!114 &-4198311483710347400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1649,16 +1649,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4004781127094337912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 008793ca81f434a43a21394841b1b5aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 863c4e62ecd974198b64062ec3a8cab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileArray:
+  prefabs:
+  - {fileID: 8252360527516310329, guid: f7b2e35ab85126948bf1fb5320306b0f, type: 3}
   - {fileID: 5741852848245306660, guid: 361bb282ad5b8824d9b99df1be169ef3, type: 3}
   - {fileID: 3561047893504294290, guid: 747407b4d742d9543beb8362a74d53e7, type: 3}
-  - {fileID: 8252360527516310329, guid: f7b2e35ab85126948bf1fb5320306b0f, type: 3}
-  poolSize: 10
-  randomIntervalMax: 10
-  randomIntervalMin: 0
+  poolSize: 5
+  minSpawnInterval: 1
+  maxSpawnInterval: 2
+  player: {fileID: 0}
   projectileOffset: 1
 --- !u!1 &9135459783878269965
 GameObject:
