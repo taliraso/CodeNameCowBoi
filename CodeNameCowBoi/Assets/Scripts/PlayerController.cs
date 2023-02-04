@@ -10,13 +10,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float xOffset = 0.005f;
     [SerializeField] float zOffset = 0.005f;
     public float forceSize = 300;
-    public float dashSpeed = 2; 
+    public float dashSpeed = 20;
+    float userDashSpeed; 
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        userDashSpeed = dashSpeed;
         
     }
 
@@ -44,11 +46,13 @@ public class PlayerController : MonoBehaviour
 
         if (dashMovement == 1)
         {
-            dashSpeed = 2;
+            dashSpeed = userDashSpeed;
+            Debug.Log("are we dashing?");
+
         }
         else
         {
-            dashSpeed = 1;
+            dashSpeed = 1f;
         }
 
     }
