@@ -177,67 +177,11 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Movement
       m_Flags: 8
-    - m_Name: 3D Vector
-      m_Id: 23330698-f2c9-417b-9d97-e2e59b1b8d37
-      m_Path: 3DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movement
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 897db87c-9c2a-4b93-9a32-fc4c41eb7471
-      m_Path: <Keyboard>/shift
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movement
-      m_Flags: 8
-    - m_Name: down
-      m_Id: d5078ba0-2ca7-43f6-8063-61886727bd7a
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movement
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 015c4ef5-7842-42cf-8766-f8fc095423bf
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movement
-      m_Flags: 8
-    - m_Name: right
-      m_Id: d3182659-15c9-46c8-aa01-d87197b9ef73
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movement
-      m_Flags: 8
-    - m_Name: forward
-      m_Id: 018359c3-1a63-4d84-a171-96945fd491c5
-      m_Path: <Keyboard>/upArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movement
-      m_Flags: 8
-    - m_Name: backward
-      m_Id: 49b0f231-784c-4f3f-be83-32ea7ef1cd14
-      m_Path: <Keyboard>/downArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Movement
-      m_Flags: 8
     m_Flags: 0
-  xOffset: 0.005
-  zOffset: 0.005
+  xOffset: 0.02
+  zOffset: 0.02
   forceSize: 300
-  dashSpeed: 2
+  dashSpeed: 5
   currentLeftRightValue: 0
   currentForwardBackValue: 0
   currentDashValue: 0
