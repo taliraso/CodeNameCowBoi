@@ -29,9 +29,9 @@ public class PlayerCollisionManager : MonoBehaviour
            
        
 
-        if (health < 1)
-        {
-            Destroy(gameObject);
-        }
+        //if (health < 1)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }
