@@ -21,7 +21,7 @@ public class PlayerCollisionManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (gameObject)
+        if (collision.gameObject.layer != 6 )
         {
             Destroy(collision.gameObject);
             health -= 1;
