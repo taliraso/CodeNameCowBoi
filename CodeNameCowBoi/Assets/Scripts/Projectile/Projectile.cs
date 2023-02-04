@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
 
     public float projectileBoundry = 10f; //position limit that the projectile can go 
 
+    
+
     private void Start()
     {
         

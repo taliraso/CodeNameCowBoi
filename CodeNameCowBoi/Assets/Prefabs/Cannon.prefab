@@ -1652,8 +1652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008793ca81f434a43a21394841b1b5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8206686453481548739, guid: 51a8333f0282f482bb5f7c887da0a4e4, type: 3}
+  projectilePrefab: {fileID: 5741852848245306660, guid: 361bb282ad5b8824d9b99df1be169ef3, type: 3}
   poolSize: 10
+  randomIntervalMax: 10
+  randomIntervalMin: 0
 --- !u!1 &9135459783878269965
 GameObject:
   m_ObjectHideFlags: 0
