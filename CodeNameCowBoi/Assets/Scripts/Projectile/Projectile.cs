@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     
-    public float lanuchVelocity = 1f; // how fast the projectile will shoot
+    public float lanuchVelocity = 5f; // how fast the projectile will shoot
     public float projectileBoundry = 10f; //position limit that the projectile can go 
 
     
