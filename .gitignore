@@ -58,3 +58,13 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+CodeNameCowBoi/obj
+CodeNameCowBoi/Temp
+CodeNameCowBoi/Logs
+CodeNameCowBoi/Library/StateCache
+CodeNameCowBoi/Library/ShaderCache
+CodeNameCowBoi/Library/Search
+CodeNameCowBoi/Library/ScriptAssemblies
+CodeNameCowBoi/Library/PackageManager
+CodeNameCowBoi/Library/Artifacts
+CodeNameCowBoi/Library/Bee
