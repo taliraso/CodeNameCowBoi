@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.up * Time.deltaTime * lanuchVelocity);
+        transform.Translate(Vector3.forward * Time.deltaTime * lanuchVelocity);
 
         if(transform.position.z > projectileBoundry)
         {

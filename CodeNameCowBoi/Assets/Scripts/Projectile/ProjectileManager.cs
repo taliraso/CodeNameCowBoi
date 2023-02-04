@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
 {
+    //Projectile pool 
     public GameObject projectilePrefab;
     public int poolSize = 10;
     private GameObject[] projectiles;
     private int currentProjectile = 0;
+
+
+    //Randomise rate
+    [SerializeField]float randomIntervalMax = 1f; 
+    [SerializeField] float randomIntervalMin = -1f;
+    private float randomTime = 0;
+
+    //target player
+    private GameObject player;
+    string playerTag = "Player";
+    private Transform target;
 
     void Start()
     {
@@ -18,17 +30,30 @@ public class ProjectileManager : MonoBehaviour
             obj.SetActive(false);
             projectiles[i] = obj;
         }
+
+        //Random interval
+        randomTime = Random.Range(randomIntervalMin, randomIntervalMax);
+        InvokeRepeating("SpawnProjectile", randomTime, 1);
+
+        //find player
+        player = GameObject.FindGameObjectWithTag(playerTag);
+        target = player.transform;
     }
-    private void Update()
+   
+    public GameObject SpawnProjectile()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GetProjectile();
-        }
-    }
-    public GameObject GetProjectile()
-    {
+        
+        //obj.transform.rotation = new Quaternion(transform.rotation.x + 1, transform.rotation.y, transform.rotation.x, transform.rotation.w);
         GameObject obj = projectiles[currentProjectile];
+        obj.transform.position = transform.position;
+
+        if (player != null) //can it find the player object?
+        { 
+            Vector3 targetPosition = target.position;
+            targetPosition.y = transform.position.y;
+            obj.transform.LookAt(targetPosition);
+        }
+
         obj.SetActive(true);
         currentProjectile++;
         if (currentProjectile >= poolSize)
