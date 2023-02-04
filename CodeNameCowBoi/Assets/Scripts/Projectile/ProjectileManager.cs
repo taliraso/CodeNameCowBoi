@@ -5,7 +5,10 @@ using UnityEngine;
 public class ProjectileManager : MonoBehaviour
 {
     //Projectile pool 
-    public GameObject projectilePrefab;
+    //public GameObject projectilePrefab;
+    public GameObject[] projectileArray;
+    private int arrayIndex = 0;
+
     public int poolSize = 10;
     private GameObject[] projectiles;
     private int currentProjectile = 0;
@@ -20,13 +23,15 @@ public class ProjectileManager : MonoBehaviour
     private GameObject player;
     string playerTag = "Player";
     private Transform target;
-
+    public float projectileOffset = 1;
     void Start()
     {
+        arrayIndex = projectileArray.Length;
+
         projectiles = new GameObject[poolSize];
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject obj = Instantiate(projectilePrefab);
+            GameObject obj = Instantiate(projectileArray[Random.Range(0,arrayIndex)]);
             obj.SetActive(false);
             projectiles[i] = obj;
         }
@@ -51,7 +56,7 @@ public class ProjectileManager : MonoBehaviour
         if (player != null) //can it find the player object?
         { 
             Vector3 targetPosition = target.position;
-            targetPosition.y = transform.position.y;
+            targetPosition.y = transform.position.y + projectileOffset;
             obj.transform.LookAt(targetPosition);
         }
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4188544043967948584}
   - component: {fileID: 977115131484219533}
   - component: {fileID: 3056710774494223431}
+  - component: {fileID: 93507495119325713}
   m_Layer: 0
   m_Name: Potato
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &93507495119325713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561047893504294290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71f92869f5a04de4a15face9bc8ad0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanuchVelocity: 1
+  projectileBoundry: 10
