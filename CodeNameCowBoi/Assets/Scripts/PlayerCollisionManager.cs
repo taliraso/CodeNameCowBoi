@@ -8,6 +8,11 @@ public class PlayerCollisionManager : MonoBehaviour
     public int health = 3;
     public GameObject floor;
 
+
+    //Score
+    public ScoreManager scoreManager;
+    public int scoreValue = 10;
+
     public GameObject[][] projectilePoolObject;
     // Start is called before the first frame update
     void Start()
@@ -25,9 +30,10 @@ public class PlayerCollisionManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Projectile") 
         {
-            
             collision.gameObject.SetActive(false);
             health -= 1;
+            //scoreManager.UpdateScore(scoreValue);
+            scoreManager.score ++ ;
         }
            
        

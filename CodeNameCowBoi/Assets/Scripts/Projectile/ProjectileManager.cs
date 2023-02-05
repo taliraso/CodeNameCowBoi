@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
 {
-    /// <summary>
-    /// Zach - Fix the null ref pooling issues plz
-    /// 
-    /// </summary>
-    //Projectile pool 
-    //public GameObject projectilePrefab;
+    
     public GameObject[] projectileArray;
     private int arrayIndex = 0;
 
@@ -29,6 +24,7 @@ public class ProjectileManager : MonoBehaviour
     string playerTag = "Player";
     private Transform target;
     public float projectileOffset = 1;
+
     void Start()
     {
         arrayIndex = projectileArray.Length;
