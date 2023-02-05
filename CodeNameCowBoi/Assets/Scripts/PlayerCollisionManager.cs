@@ -13,10 +13,11 @@ public class PlayerCollisionManager : MonoBehaviour
     public GameObject[][] projectilePoolObject;
 
     public ScoreManager scoreManager;
+    public bool gameOver = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameOver = false;   
     }
 
     // Update is called once per frame
@@ -33,7 +34,10 @@ public class PlayerCollisionManager : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
-
+        if(health == 0)
+        {
+           gameOver = true;
+        }
         
 
     }
@@ -44,10 +48,14 @@ public class PlayerCollisionManager : MonoBehaviour
         {
             
             collision.gameObject.SetActive(false);
-            health -= 1;
             scoreManager.score++;
         }
-           
+        if (collision.gameObject.tag == "Carrot")
+        {
+            collision.gameObject.SetActive(false);
+            health -= 1;
+
+        }   
        
 
         //if (health < 1)
