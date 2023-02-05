@@ -11,6 +11,8 @@ public class PlayerCollisionManager : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public GameObject[][] projectilePoolObject;
+
+    public ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class PlayerCollisionManager : MonoBehaviour
             }
         }
 
+        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -41,6 +45,7 @@ public class PlayerCollisionManager : MonoBehaviour
             
             collision.gameObject.SetActive(false);
             health -= 1;
+            scoreManager.score++;
         }
            
        
